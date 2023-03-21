@@ -7,5 +7,11 @@ pipeline {
                 git branch: 'main', credentialsId: 'raji_git', url: 'https://github.com/rajeeb007/sonarqubelinkin.git'
             }
         }
+        stage('test') {
+            steps {
+                sh 'mvn test' 
+            
+            }
+        }
     }
 }
