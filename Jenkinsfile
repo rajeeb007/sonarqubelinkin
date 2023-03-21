@@ -19,5 +19,14 @@ pipeline {
             
             }
         }
+        stage('code scanner') {
+            steps {
+                withSonarQubeEnv(credentialsId: 'sonar_key') {
+                    sh 'sonar:sonar'
+    
+               }
+            
+            }
+        }
     }
 }
